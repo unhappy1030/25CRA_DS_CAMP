@@ -11,9 +11,10 @@ typedef struct {
 void initStack(Stack* stack);
 
 // 스택 연산 함수
-int push(Stack* stack, int item);
-int pop(Stack* stack, int* item);
-int peek(Stack* stack, int* item);
+void push(Stack* stack, int item);
+void pop(Stack* stack);
+
+int peek(Stack* stack);
 int getSize(Stack* stack);
 int isEmpty(Stack* stack);
 int isFull(Stack* stack);

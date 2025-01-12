@@ -12,9 +12,9 @@ typedef struct {
 void initQueue(Queue* queue);
 
 // 큐 연산 함수
-int enqueue(Queue* queue, int item);
-int dequeue(Queue* queue, int* item);
-int peek(Queue* queue, int* item);
+void enqueue(Queue* queue, int item);
+void dequeue(Queue* queue);
+int peek(Queue* queue);
 int getSize(Queue* queue);
 int isEmpty(Queue* queue);
 int isFull(Queue* queue);

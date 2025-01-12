@@ -1,22 +1,24 @@
 #include<stdio.h>
 
-#define MAX_SIZE 100 // 스택의 최대 크기
+#define MAX_SIZE 100 // 큐의 최대 크기
 
 typedef struct {
     int data[MAX_SIZE]; // 데이터를 저장할 배열
-    int top;            // 스택의 맨 위를 가리키는 변수
-} Stack;
+    int front;          // 큐의 앞쪽을 가리키는 변수
+    int rear;           // 큐의 뒤쪽을 가리키는 변수
+} Queue;
 
-// 스택 초기화
-void initStack(Stack* stack);
+// 큐 초기화
+void initQueue(Queue* queue);
 
-// 스택 연산 함수
-int push(Stack* stack, int item);
-int pop(Stack* stack, int* item);
-int peek(Stack* stack, int* item);
-int getSize(Stack* stack);
-int isEmpty(Stack* stack);
-int isFull(Stack* stack);
+// 큐 연산 함수
+int enqueue(Queue* queue, int item);
+int dequeue(Queue* queue, int* item);
+int peek(Queue* queue, int* item);
+int getSize(Queue* queue);
+int isEmpty(Queue* queue);
+int isFull(Queue* queue);
+
 
 int main(){
     return 0;

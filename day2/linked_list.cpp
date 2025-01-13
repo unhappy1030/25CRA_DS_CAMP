@@ -73,11 +73,12 @@ Node* insert(Node* head, int key, int value) {
         cout << "Key " << key << " not found in the list!" << endl;
         return head;
     }
-    
+
     Node* newNode = new Node{value, temp->next};
     temp->next = newNode;
     return head;
 }
+
 
 // remove: 특정 값을 가진 노드 제거
 Node* remove(Node* head, int value) {

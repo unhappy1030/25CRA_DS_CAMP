@@ -10,13 +10,20 @@ typedef struct {
     int size;           // 현재 큐에 있는 데이터 개수
 } Queue;
 
+
+// 0 1 2 
+// front 0, rear -1
+// front 0 rear 2 full
+// front 1 rear 2 
+// front 1 rear 0
+
 // 큐 초기화
 void initQueue(Queue* queue) {
     if (queue == NULL) {
         printf("Memory allocation failed!\n");
         exit(1);
     }
-    queue->front = 0;
+    queue->front = -1;
     queue->rear = -1;
     queue->size = 0;
 }
@@ -48,6 +55,10 @@ void enqueue(Queue* queue, int item) {
         return;
     }
     queue->rear = (queue->rear + 1) % MAX_SIZE;
+    // 0 1 2 3 4 5
+    //MAX_SIZE = 6
+    // rear = 4, enqueue | (rear + 1) % 6 = 5
+    // rear = 5, enqueue | (rear + 1) % 6 = 0 
     queue->data[queue->rear] = item;
     queue->size++;
 }
@@ -59,6 +70,9 @@ int dequeue(Queue* queue) {
         return -1; // 실패를 나타내는 값
     }
     int item = queue->data[queue->front];
+    // 0 1 2 3 4
+    //front 1, rear 3
+    //item = data[front] = data[1] = ?;
     queue->front = (queue->front + 1) % MAX_SIZE;
     queue->size--;
     return item;

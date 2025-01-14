@@ -26,12 +26,13 @@ int isEmpty(Stack* stack) {
 // 스택이 가득 찼는지 확인
 int isFull(Stack* stack) {
     return stack->top == MAX_SIZE - 1;
-}\
+}
 
 // 스택에 요소 추가 (push)
 void push(Stack* stack, int item) {
     if (isFull(stack)) {
         printf("Stack overflow! Cannot push %d.\n", item);
+        return ;
     }
     stack->data[++(stack->top)] = item;
 }
